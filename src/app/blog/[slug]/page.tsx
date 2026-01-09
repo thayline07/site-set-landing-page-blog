@@ -23,7 +23,8 @@ export async function generateMetadata({
     process.env.NEXT_PUBLIC_SITE_URL ||
     "https://site-set-landing-page-blog-3uu1.vercel.app";
   const postUrl = new URL(`/blog/${slug}`, baseUrl).toString();
-  const imageUrl = new URL(post.image, baseUrl).toString();
+  const imagePath = post.image?.endsWith(".svg") ? "/og-image.jpg" : post.image;
+  const imageUrl = new URL(imagePath, baseUrl).toString();
 
   return {
     title: post.title,
@@ -41,6 +42,9 @@ export async function generateMetadata({
       images: [
         {
           url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
         },
       ],
     },
