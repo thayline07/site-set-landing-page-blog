@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/layout";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://site-set-landing-page-blog-3uu1.vercel.app"),
   title: "Site.Set",
   description: "Venda seus produtos como afiliado em um único lugar.",
   robots: "index, follow",

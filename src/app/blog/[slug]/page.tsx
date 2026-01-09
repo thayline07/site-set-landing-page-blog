@@ -19,13 +19,36 @@ export async function generateMetadata({
     return {};
   }
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    "https://site-set-landing-page-blog-3uu1.vercel.app";
+  const postUrl = new URL(`/blog/${slug}`, baseUrl).toString();
+  const imageUrl = new URL(post.image, baseUrl).toString();
+
   return {
     title: post.title,
     description: post.description,
     robots: "index, follow",
     authors: [{ name: post.author.name }],
+    alternates: {
+      canonical: postUrl,
+    },
     openGraph: {
-      images: [post.image],
+      title: post.title,
+      description: post.description,
+      type: "article",
+      url: postUrl,
+      images: [
+        {
+          url: imageUrl,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [imageUrl],
     },
   };
 }
