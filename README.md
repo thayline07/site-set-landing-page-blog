@@ -16,7 +16,8 @@ Aplicação web desenvolvida com foco em performance, SEO e experiência do usu�
 ## 📸 Preview
 
 <p align="center">
-  <img src="./public/preview.png" width="70%">
+  <img width="1299" height="633" alt="image" src="https://github.com/user-attachments/assets/01328e1c-592b-4089-9373-5caead90df97" />
+
 </p>
 
 ---
